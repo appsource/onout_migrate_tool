@@ -202,15 +202,21 @@ const Settings: NextPage = (props) => {
     setOwnerIsFetched('')
     setOwnerJsonData('')
   }
-  
+ 
   return (
     <div className={styles.container}>
       <h1 className={styles.h1}>Onout migrate tools</h1>
-      {!isConnected() ? (
+      {!connectedAddress || `${activeChainId}` != `${storageChainId}` ? (
         <>
-          <button disabled={isWalletConnecting} className={`${styles.mainButton} primaryButton`} onClick={connectWeb3}>
-            {isWalletConnecting ? `Connecting` : `Connect Wallet`}
-          </button>
+          {`${activeChainId}` != `${storageChainId}` && activeChainId ? (
+            <button disabled={isSwitchChain} className={`${styles.mainButton} primaryButton`} onClick={() => { switchChainId() }}>
+              {isSwitchChain ? `Switching network` : `Switch network`}
+            </button>
+          ) : (
+            <button disabled={isWalletConnecting} className={`${styles.mainButton} primaryButton`} onClick={connectWeb3}>
+              {isWalletConnecting ? `Connecting` : `Connect Wallet`}
+            </button>
+          )}
         </>
       ) : (
         <>

@@ -271,7 +271,7 @@ const Settings: NextPage = (props) => {
                             <span><strong>{formatDomain(ownerDomain)}</strong></span>
                           </div>
                           <div className={styles.adminInfoError}>
-                            <span>This domain is not configured. Migration not aviable</span>
+                            <span>This domain is not configured. Migration not available.</span>
                           </div>
                           <hr />
                           <div className={styles.actionsRow}>
@@ -289,7 +289,7 @@ const Settings: NextPage = (props) => {
                                 <span><strong>{formatDomain(ownerDomain)}</strong></span>
                               </div>
                               <div className={styles.adminInfoError}>
-                                <span>You are not ownership of {formatDomain(ownerDomain)}</span>
+                                <span>You are not the owner of {formatDomain(ownerDomain)}</span>
                                 <span>This domain ownership is: {ownerCurrent}</span>
                               </div>
                               <hr />
